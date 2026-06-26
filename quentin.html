@@ -1,0 +1,60 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Template Veille Technologique</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="./logo.png" alt="logo veille">
+            <p>Veille Technologique <strong>DEV-26-02</strong></p>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <header class="article-header">
+                <p class="eyebrow">Fiche de veille</p>
+                <h1>RuView — Plateforme de surveillance spatiale par signal WiFi</h1>
+                <p class="intro">RuView transforme des signaux WiFi ordinaires en intelligence spatiale en temps réel : détection de présence, suivi de posture et surveillance des signes vitaux, sans aucune caméra.</p>
+            </header>
+
+            <section class="meta" aria-label="Informations de veille">
+                <p><strong>Thème :</strong> Intelligence artificielle embarquée / IoT / Vie privée</p>
+                <p><strong>Date :</strong> Juin 2026</p>
+                <p><strong>Auteur / Source :</strong> ruvnet — github.com/ruvnet/RuView</p>
+            </section>
+
+            <section>
+                <h2>Description :</h2>
+                <p>RuView est une plateforme open source qui exploite les signaux WiFi (Channel State Information — CSI) pour créer une forme de « vision » sans caméra. Elle est capable de détecter des personnes à travers des murs, dans l'obscurité totale, à partir d'un simple module ESP32 à environ 9 dollars.</p>
+                <p>La technologie repose sur l'analyse fine des perturbations du signal WiFi causées par les mouvements humains. Ces perturbations sont traitées par des réseaux de neurones (transformeurs et graph neural networks) pour en extraire des informations précises sur la scène.</p>
+                <p>Le système est capable d'estimer un squelette humain complet à 17 points-clés en se basant uniquement sur le signal WiFi, sans aucun équipement optique. Il atteint une précision de 82,3 % sur le benchmark MM-Fi, dépassant l'état de l'art précédent.</p>
+                <p>En termes de surveillance des signes vitaux, RuView peut mesurer sans contact la fréquence respiratoire (6 à 30 inspirations/min) et la fréquence cardiaque (40 à 120 bpm), ainsi qu'assurer un suivi du sommeil avec détection des phases et de l'apnée.</p>
+                <p>Les performances sont optimisées pour l'edge computing : moins d'1 ms pour la détection de présence, 8,4 ms pour l'estimation de posture à froid sur un Raspberry Pi 5. Le modèle quantifié tient en 8 Ko seulement.</p>
+                <p>RuView s'intègre nativement à l'écosystème domotique : Home Assistant, Matter, Apple Home, Google Home et Amazon Alexa sont supportés. Le déploiement est possible via Docker, PyPI ou firmware embarqué.</p>
+                <p>Le projet est développé majoritairement en Rust (55 %), Python (15 %) et TypeScript (20 %), avec plus de 1 000 commits sur la branche principale et 96 Architecture Decision Records (ADR) documentés.</p>
+                <p>La plateforme comprend un catalogue de 105 modules couvrant la santé, la sécurité, le bâtiment, le retail, l'industrie et la recherche, tous signés et mis à jour en OTA.</p>
+                <p>Une couche de confidentialité appelée BFLD (Beamforming Feedback Limited Data) est intégrée pour prévenir toute fuite d'identité à partir des données de signal — adressant directement les enjeux RGPD.</p>
+                <p>RuView dispose également d'un serveur MCP (Model Context Protocol) permettant à des agents IA comme Claude ou Cursor d'interagir avec les capteurs WiFi en temps réel.</p>
+            </section>
+
+            <section>
+                <h2>Analyse :</h2>
+                <p>RuView représente une avancée notable dans la surveillance passive sans caméra. L'approche est techniquement solide (scores de précision publiés, benchmark reproductible, modèles disponibles sur Hugging Face) et l'accessibilité du matériel (moins de 10 €) la rend potentiellement très répandue. Les cas d'usage légitimes sont nombreux : détection de chutes chez les personnes âgées, économies d'énergie intelligentes, sécurité industrielle. Cependant, la possibilité de détecter des personnes à travers les murs sans leur consentement soulève des questions éthiques et légales sérieuses, notamment au regard du RGPD en Europe. La couche BFLD intégrée est un début de réponse, mais elle ne suffit pas à encadrer les usages malveillants (surveillance discrète dans des logements, espaces publics…). À surveiller de près dans les mois à venir, notamment pour son adoption dans les environnements professionnels et son traitement par les autorités de protection des données.</p>
+                <p>Pour un développeur web ou un architecte système, l'intégration via le serveur MCP est particulièrement intéressante : elle ouvre la voie à des applications IA contextuelles capables de réagir à la présence physique des utilisateurs, sans infrastrucure vidéo. C'est un axe d'innovation à explorer dans des projets d'interfaces adaptatives ou de domotique avancée.</p>
+            </section>
+
+            <section>
+                <h2>Lien de la ressource :</h2>
+                <a href="https://github.com/ruvnet/RuView">RuView — ruvnet/RuView sur GitHub</a>
+            </section>
+
+            <footer class="article-footer">
+                <p>Mots-clés : WiFi sensing, DensePose, IoT, Edge AI, CSI, MCP, domotique, vie privée, Rust, ESP32 — Niveau de criticité : Modéré (impact éthique et réglementaire potentiel)</p>
+            </footer>
+        </article>
+    </main>
+</body>
+</html>
