@@ -1,0 +1,79 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Template Veille Technologique</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="./logo.png" alt="logo veille">
+            <p>Veille Technologique <strong>DEV-26-02</strong></p>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <header class="article-header">
+                <p class="eyebrow">Fiche de veille</p>
+                <h1>LeedRSS</h1>
+                <p class="intro">Leed (Light Feed) est un agrégateur RSS/ATOM libre, minimaliste et auto-hébergeable,
+                    conçu pour une consultation rapide et non intrusive de vos flux d'actualité.</p>
+            </header>
+
+            <section class="meta" aria-label="Informations de veille">
+                <p><strong>Thème :</strong>Agrégateur RSS</p>
+                <p><strong>Date :</strong> Publié en 2014, régulièrement mis à jour</p>
+                <p><strong>Auteur / Source :</strong> cobalt74 et Simounet sur GitHub</p>
+            </section>
+
+            <section>
+                <h2>Description :</h2>
+                <p>Leed (contraction de Light Feed) est un agrégateur de flux RSS et ATOM qui se distingue par sa
+                    philosophie minimaliste et sa légèreté. Conçu pour être installé sur votre propre serveur
+                    (auto-hébergement), il fonctionne avec un système de tâches planifiées (Cron) qui met à jour vos
+                    flux en arrière-plan. Cela permet d'éviter les temps de chargement liés à la récupération des
+                    articles : lorsque vous vous connectez, les informations sont déjà prêtes et affichées
+                    instantanément.</p>
+
+                <p>Parmi ses atouts :</p>
+                <ul>
+                    <li>Compatibilité multi-écrans : il s'adapte aussi bien aux PC qu'aux tablettes et smartphones.</li>
+                    <li>Standard OPML : il prend en charge l'import et l'export de vos abonnements au format OPML, ce
+                        qui
+                        facilite la migration depuis ou vers d'autres agrégateurs.</li>
+                    <li>Communauté francophone : développé et maintenu par une équipe de contributeurs français.</li>
+                    <li>Licence libre : distribué sous licence AGPL-3.0.</li>
+                </ul>
+                <p>Techniquement, Leed nécessite un serveur Apache, PHP 7.2 minimum et MySQL. Son installation est
+                    simple et se fait via un script d'installation dédié</p>
+                <p>C'est une excellente alternative à FreshRSS si vous recherchez un lecteur RSS épuré, rapide, et
+                    développé par une communauté francophone.</p>
+            </section>
+
+            <section>
+                <h2>Analyse :</h2>
+                <p>Le risque principal de Leed est sa dépendance à une communauté plus restreinte que FreshRSS, ce qui
+                    peut ralentir la correction de failles de sécurité. Son architecture basée sur Cron et PHP/MySQL
+                    allège la charge serveur, mais impose une surveillance technique pour éviter les blocages de
+                    rafraîchissement.</p>
+                <p>Je recommande Leed uniquement pour une veille individuelle sur navigateur, où sa légèreté fait la
+                    différence. Pour une utilisation nomade, privilégiez FreshRSS, dont l'API est bien mieux supportée
+                    par les applications mobiles tierces.</p>
+            </section>
+
+            <section>
+                <h2>Lien de la ressource :</h2>
+                <a href="https://github.com/LeedRSS/Leed">LeedRSS</a>
+            </section>
+
+            <footer class="article-footer">
+                <p><!-- Optionnel : mots-clés, catégorie, niveau de criticité, etc. --></p>
+            </footer>
+        </article>
+    </main>
+</body>
+
+</html>
