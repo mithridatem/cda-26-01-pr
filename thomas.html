@@ -1,0 +1,34 @@
+un petit script très utile, c’est un script qui fait automatiquement :
+
+vérification de l’état Git ;
+ajout des fichiers ;
+commit avec un message ;
+push vers GitHub.
+
+On le nommera save.sh.: #!/bin/bash
+
+echo "État actuel du dépôt :"
+git status
+
+echo ""
+echo "Ajout de tous les fichiers..."
+git add .
+
+echo ""
+read -p "Message du commit : " message
+
+if [ -z "$message" ]; then
+  echo "Erreur : le message de commit ne peut pas être vide."
+  exit 1
+fi
+
+echo ""
+echo "Création du commit..."
+git commit -m "$message"
+
+echo ""
+echo "Envoi vers GitHub..."
+git push
+
+echo ""
+echo "Terminé."
